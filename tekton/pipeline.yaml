@@ -9,7 +9,7 @@ spec:
     type: git
 
   tasks:
-  - name: git-inspect
+  - name: kubelinter
     resources:
       inputs:
       - name: src
