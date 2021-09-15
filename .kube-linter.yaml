@@ -1,0 +1,16 @@
+checks:
+  exclude: 
+  - unset-memory-requirements
+  include:
+  - use-namespace
+customChecks:
+  - name: memory-too-large
+    template: memory-requirements
+    params:
+      requirementsType: any
+      lowerBoundMB: 4096
+    scope:
+      objectKinds:
+        - DeploymentLike
+    remediation: Diminuer la quantité de mémoire requise (requests/limits)
+

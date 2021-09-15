@@ -1,0 +1,18 @@
+apiVersion: tekton.dev/v1beta1
+kind: Pipeline
+metadata:
+  name: kubelinter-sample
+  namespace: kubelinter
+spec:
+  resources:
+  - name: src
+    type: git
+
+  tasks:
+  - name: git-inspect
+    resources:
+      inputs:
+      - name: src
+        resource: src
+    taskRef:
+      name: kubelinter
